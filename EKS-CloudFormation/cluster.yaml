@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "This is EKS cluster config"
+Parameters:
+  tagName:
+    Type: String
+    Description: This is nama of our eks project
+Resources:
+  myCluster:
+    Type: 'AWS::EKS::Cluster'
+    Properties:
+      Name: eks-cluster
+      Version: '1.17'
+      RoleArn:
+        Fn::ImportValue: !Sub '${tagName}-RoleArn'
+      ResourcesVpcConfig:
+        SecurityGroupIds:
+          - Fn::ImportValue: !Sub '${tagName}-SG'
+        SubnetIds:
+          - Fn::ImportValue: !Sub '${tagName}-Pub01'
+          - Fn::ImportValue: !Sub '${tagName}-Pub02'
+          - Fn::ImportValue: !Sub '${tagName}-Pri01'
+          - Fn::ImportValue: !Sub '${tagName}-Pri02'
+
+

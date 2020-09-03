@@ -1,0 +1,42 @@
+[
+	{
+		"ParameterKey": "tagName",
+		"ParameterValue": "eks-udacity"
+	},
+	{
+		"ParameterKey": "ClusterName",
+		"ParameterValue": "eks-cluster"
+	},
+    {
+		"ParameterKey": "NodeImageId",
+		"ParameterValue": "ami-0925e0a4a64fb6895"
+	},
+    {
+		"ParameterKey": "NodeInstanceType",
+		"ParameterValue": "t3.medium"
+	},
+    {
+		"ParameterKey": "NodeAutoScalingGroupMinSize",
+		"ParameterValue": "2"
+	},
+    {
+		"ParameterKey": "NodeAutoScalingGroupMaxSize",
+		"ParameterValue": "4"
+	},
+    {
+		"ParameterKey": "NodeAutoScalingGroupDesiredCapacity",
+		"ParameterValue": "2"
+	},
+    {
+		"ParameterKey": "NodeVolumeSize",
+		"ParameterValue": "5"
+	},
+    {
+		"ParameterKey": "KeyName",
+		"ParameterValue": "eastkey"
+	},
+    {
+		"ParameterKey": "NodeGroupName",
+		"ParameterValue": "mynode"
+	}
+]

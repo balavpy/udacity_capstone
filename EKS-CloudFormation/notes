@@ -1,0 +1,21 @@
+1. Create user with admin  and EKS permission
+
+
+curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.9/2020-08-04/bin/linux/amd64/kubectl
+curl -o kubectl.sha256 https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.9/2020-08-04/bin/linux/amd64/kubectl.sha256
+openssl sha1 -sha256 kubectl
+chmod +x ./kubectl
+mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+kubectl version --short --client
+curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.9/2020-08-04/bin/linux/amd64/aws-iam-authenticator
+chmod +x ./aws-iam-authenticator
+mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$PATH:$HOME/bin
+echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+aws eks --region us-east-1 update-kubeconfig --name eks-cluster
+
+curl -o aws-auth-cm.yaml https://amazon-eks.s3-us-west-2.amazo...
+vi aws-auth-cm.yaml
+kubectl apply -f aws-auth-cm.yaml
+kubectl get nodes --watch
+

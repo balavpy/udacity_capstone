@@ -1,0 +1,26 @@
+[
+	{
+		"ParameterKey": "tagName",
+		"ParameterValue": "eks-udacity"
+	},
+	{
+		"ParameterKey": "VpcBlock",
+		"ParameterValue": "192.168.0.0/16"
+	},
+	{
+		"ParameterKey": "subnet1IP",
+		"ParameterValue": "192.168.0.0/18"
+	},
+	{
+		"ParameterKey": "subnet2IP",
+		"ParameterValue": "192.168.64.0/18"
+	},
+	{
+		"ParameterKey": "subnet3IP",
+		"ParameterValue": "192.168.128.0/18"
+	},
+	{
+		"ParameterKey": "subnet4IP",
+		"ParameterValue": "192.168.192.0/18"
+	}
+]
